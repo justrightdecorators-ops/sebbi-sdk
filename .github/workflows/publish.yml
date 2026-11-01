@@ -1,10 +1,12 @@
 name: Build and test sebbi
 
-# Every push builds and tests both clients.
+# Every push builds both clients and runs their full test suites against the
+# real OpenTelemetry SDKs, including the cross-language fingerprint test.
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -13,8 +15,9 @@ permissions:
 jobs:
   python:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.13"]
     defaults:
       run:
         working-directory: python
@@ -22,18 +25,24 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
       - name: Build
         run: |
           python -m pip install --upgrade build
           python -m build
       - name: Test the wheel
         run: |
-          python -m pip install dist/*.whl
+          python -m pip install "$(ls dist/*.whl)[otel]" opentelemetry-exporter-otlp-proto-common
           cd /tmp && SEBBI_DISABLED=1 python -c "import sebbi; print(sebbi.seal(1,2,'ci'), sebbi.fingerprint({'a':1}))"
+          sebbi --help
+      - name: Unit tests
+        run: cp -r tests /tmp/sebbi-tests && cd /tmp && HOME=/tmp python -m unittest discover -s /tmp/sebbi-tests -v
 
   js:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["18", "22"]
     defaults:
       run:
         working-directory: js
@@ -41,8 +50,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - name: Test
+          node-version: ${{ matrix.node-version }}
+      - name: Smoke test
         run: |
           SEBBI_DISABLED=1 node -e "const s=require('./index.cjs');s.seal(1,2,'ci').then(r=>console.log(r.id))"
+          SEBBI_DISABLED=1 node --input-type=module -e "import {SebbiSpanProcessor} from './otel.mjs'; console.log(typeof SebbiSpanProcessor)"
           npm pack --dry-run
+      - name: Unit tests (real OpenTelemetry SDK)
+        run: |
+          npm install --no-save --no-package-lock @opentelemetry/api @opentelemetry/sdk-trace-base
+          HOME=/tmp npm test

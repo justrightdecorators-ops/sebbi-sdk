@@ -40,7 +40,7 @@ import urllib.request
 import uuid
 from typing import Any, Callable, Dict, List, Optional
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 __all__ = ["receipt", "seal", "reverse", "last", "flush", "configure", "stats", "fingerprint", "Receipt"]
 
 SITE = "https://sebbi.pro"
@@ -435,7 +435,8 @@ def _cli() -> int:
     a = sys.argv[1:]
     if not a or a[0] in ("-h", "--help"):
         print("sebbi %s - a receipt for every AI agent action\n\n  sebbi seal <text> [label]   seal a fingerprint of <text>, print the receipt link\n"
-              "  sebbi check <id>            check a receipt\n\nDocs: %s/receipts" % (__version__, SITE))
+              "  sebbi check <id>            check a receipt\n"
+              "  sebbi verify-otlp <file>    check every span in an OTLP/JSON trace export against its receipt\n\nDocs: %s/receipts" % (__version__, SITE))
         return 0
     if a[0] == "seal" and len(a) > 1:
         r = seal(a[1], None, a[2] if len(a) > 2 else "cli").wait()
@@ -450,5 +451,12 @@ def _cli() -> int:
         except urllib.error.HTTPError as e:
             print("not found (%d)" % e.code)
             return 1
+    if a[0] == "verify-otlp" and len(a) > 1:
+        try:
+            from sebbi.integrations.otel import _cli_verify
+        except ImportError as e:
+            print(e)
+            return 2
+        return _cli_verify(a[1])
     print("unknown command; sebbi --help")
     return 2

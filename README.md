@@ -14,11 +14,15 @@ Only what you can see in the code here: a SHA-256 fingerprint of each input and 
 - Python: [`python/src/sebbi/__init__.py`](python/src/sebbi/__init__.py), see `fingerprint()` and `Receipt.wire()`
 - JavaScript: [`js/index.cjs`](js/index.cjs), see `fingerprint()` and `Receipt.wire()`
 
-Neither client has any runtime dependencies.
+Neither client has any runtime dependencies. The OpenTelemetry integration needs the OpenTelemetry SDK you already run: `sebbi[otel]` in Python, your own `@opentelemetry/*` packages in JavaScript.
+
+## OpenTelemetry
+
+`pip install "sebbi[otel]"` / `import { SebbiSpanProcessor } from "sebbi/otel"`: every agent and tool span you already trace gets a receipt, with the link written onto the span. `sebbi verify-otlp traces.json` proves an exported trace matches its receipts. Details in [`python/`](python#opentelemetry) and [`js/`](js#opentelemetry).
 
 ## Releases
 
-The version in `python/pyproject.toml` and `js/package.json` on `main` is the version published to PyPI and npm, so you can read exactly what a release contains before installing. Pin the version you have reviewed, for example `pip install "sebbi==1.1.1"`.
+Python releases are built and published to PyPI by GitHub Actions with Trusted Publishing, and each file carries a PyPI publish attestation. Every release is tested first, including the cross-language fingerprint test that keeps the two clients identical. Pin the exact version you reviewed, and for the strictest installs pin the file's sha256 from pypi.org with `pip install --require-hashes`.
 
 ## Docs
 

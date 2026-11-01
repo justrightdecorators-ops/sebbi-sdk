@@ -15,7 +15,7 @@
  * Zero dependencies. Node 18+, Deno, Bun, edge runtimes and browsers.
  */
 
-const VERSION = "1.2.1";
+const VERSION = "1.3.0";
 const SITE = "https://sebbi.pro";
 const env = (k) => (typeof process !== "undefined" && process.env ? process.env[k] || "" : "");
 
@@ -205,6 +205,14 @@ function seal(input, output, label = "", outcome = "ok") {
   return p;
 }
 
+/** Internal: seal already-computed fingerprints, optionally under a chosen id (used by sebbi/otel). */
+function _sealHashes(inputHash, outputHash, label = "", outcome = "ok", id = null) {
+  const r = new Receipt(label, inputHash, outputHash, outcome);
+  if (id) r.id = id;
+  lastP = Promise.resolve(r);
+  return enqueue(r);
+}
+
 /**
  * Reverse an action you sealed earlier. Nothing is deleted: the original stays
  * sealed and is shown as REVERSED, linked to the new reversal receipt. The
@@ -290,4 +298,4 @@ if (typeof process !== "undefined" && typeof process.on === "function") {
   process.on("beforeExit", () => { if (queue.length) kick(); });
 }
 
-module.exports = { receipt, seal, reverse, wrapTools, last, flush, configure, stats, fingerprint, check, Receipt, VERSION };
+module.exports = { receipt, seal, reverse, wrapTools, last, flush, configure, stats, fingerprint, check, Receipt, VERSION, _sealHashes };

@@ -1,7 +1,7 @@
 {
   "name": "sebbi",
-  "version": "1.2.1",
-  "description": "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt. Vercel AI SDK, LangChain.js, Mastra, MCP.",
+  "version": "1.3.0",
+  "description": "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt. Vercel AI SDK, OpenTelemetry, LangChain.js, Mastra, MCP.",
   "main": "./index.cjs",
   "module": "./index.mjs",
   "types": "./index.d.ts",
@@ -14,6 +14,11 @@
     "./ai-sdk": {
       "types": "./ai-sdk.d.ts",
       "import": "./ai-sdk.mjs"
+    },
+    "./otel": {
+      "types": "./otel.d.ts",
+      "import": "./otel.mjs",
+      "require": "./otel.cjs"
     }
   },
   "files": [
@@ -22,6 +27,9 @@
     "index.d.ts",
     "ai-sdk.mjs",
     "ai-sdk.d.ts",
+    "otel.cjs",
+    "otel.mjs",
+    "otel.d.ts",
     "README.md",
     "LICENSE"
   ],
@@ -43,7 +51,11 @@
     "eu-ai-act",
     "compliance",
     "provenance",
-    "merkle"
+    "merkle",
+    "opentelemetry",
+    "otel",
+    "tracing",
+    "observability"
   ],
   "homepage": "https://sebbi.pro/receipts",
   "author": "Monop Content <justrightdecorators@gmail.com>",
@@ -63,5 +75,8 @@
   },
   "bugs": {
     "url": "https://github.com/justrightdecorators-ops/sebbi-sdk/issues"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
   }
 }

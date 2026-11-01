@@ -64,6 +64,25 @@ await r.wait();   // optional
 console.log(r.url, r.sealed, r.blockIndex);
 ```
 
+## OpenTelemetry
+
+Already tracing? Add the processor and every agent run and tool call you trace gets a receipt, with the link written onto the span (`sebbi.receipt.id`, `sebbi.receipt.url`).
+
+```js
+import { NodeSDK } from "@opentelemetry/sdk-node";
+import { SebbiSpanProcessor } from "sebbi/otel";
+
+new NodeSDK({ spanProcessors: [new SebbiSpanProcessor(), /* your exporter's processor */] }).start();
+```
+
+**Vercel AI SDK:** turn on telemetry and every `ai.toolCall` and `ai.generateText` span is sealed:
+
+```js
+await generateText({ model, tools, prompt, experimental_telemetry: { isEnabled: true } });
+```
+
+Also recognised: OpenTelemetry GenAI conventions (`gen_ai.operation.name`), OpenInference (`openinference.span.kind`) and any span with `sebbi.seal = true`. Options: `{ llm, allSpans, filter, prefix, onReceipt }`. `SebbiSpanExporter` does the same inside an existing `BatchSpanProcessor`. Only two fingerprints per span leave your process. Fingerprints match the Python client exactly, so `sebbi verify-otlp traces.json` checks spans from either.
+
 ## Reversing an action
 
 ```js

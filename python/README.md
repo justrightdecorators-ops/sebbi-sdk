@@ -67,6 +67,33 @@ print(r.url, r.sealed, r.block_index)
 
 Async functions work with the same decorator. Exceptions are sealed with outcome `error` and re-raised unchanged.
 
+## OpenTelemetry
+
+Already tracing your agents? One line seals every agent run and tool call you trace, and writes the receipt link onto the span, so it shows up in Jaeger, Tempo, Honeycomb, Datadog, Langfuse or Phoenix next to the span itself.
+
+```bash
+pip install "sebbi[otel]"
+```
+
+```python
+from sebbi.integrations.otel import instrument
+instrument()   # adds sebbi to your global TracerProvider
+```
+
+Each sealed span gets two attributes: `sebbi.receipt.id` and `sebbi.receipt.url`. Recognised out of the box: the OpenTelemetry GenAI conventions (`gen_ai.operation.name` = `execute_tool`, `invoke_agent`), OpenInference (`openinference.span.kind`), Vercel AI SDK spans, and any span you mark with `span.set_attribute("sebbi.seal", True)`. Options: `llm=True` (also seal model calls), `all_spans=True`, `filter=fn`, `prefix="..."`, `on_receipt=fn`. Already batching spans? `BatchSpanProcessor(SebbiSpanExporter())` does the same without the link on the span.
+
+Only two fingerprints per span leave your process: never span names, attributes, prompts or tool results.
+
+**Prove a trace matches its receipts.** Export spans as OTLP/JSON (for example the Collector `file` exporter) and run:
+
+```bash
+sebbi verify-otlp traces.json
+# MATCH    https://sebbi.pro/r/r3f9...  execute_tool refund
+# 2 of 2 spans match their sealed receipts
+```
+
+Anyone holding the trace can run this, without trusting you or sebbi.pro. Change one attribute and that span shows `MISMATCH`. The fingerprint rules are in `span_payload()` and are identical in the JavaScript client.
+
 ## Reversing an action
 
 ```python
