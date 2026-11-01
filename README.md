@@ -18,7 +18,7 @@ Neither client has any runtime dependencies.
 
 ## Releases
 
-Each release is tagged in this repository (for example `v1.1.1`), so you can read exactly the code that version contains before installing. Pin the version you have reviewed, for example `pip install "sebbi==1.1.1"`.
+The version in `python/pyproject.toml` and `js/package.json` on `main` is the version published to PyPI and npm, so you can read exactly what a release contains before installing. Pin the version you have reviewed, for example `pip install "sebbi==1.1.1"`.
 
 ## Docs
 
