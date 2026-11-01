@@ -18,7 +18,7 @@ Neither client has any runtime dependencies.
 
 ## Releases
 
-Python releases are built and uploaded by [`.github/workflows/publish.yml`](.github/workflows/publish.yml) using PyPI Trusted Publishing, so every release on PyPI carries a signed attestation pointing back to the commit in this repository. Pin the version you have reviewed, for example `pip install "sebbi==1.1.1"`.
+Each release is tagged in this repository (for example `v1.1.1`), so you can read exactly the code that version contains before installing. Pin the version you have reviewed, for example `pip install "sebbi==1.1.1"`.
 
 ## Docs
 
