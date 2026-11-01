@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sebbi"
-version = "1.2.1"
+version = "1.2.2"
 description = "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.8"
-authors = [{ name = "Monop Content", email = "justrightdecorators@gmail.com" }]
+authors = [{ name = "Monop Content", email = "justin@monopcontent.com" }]
 keywords = ["ai", "agents", "audit", "receipts", "langchain", "crewai", "mcp", "openai-agents", "governance", "eu-ai-act", "compliance", "provenance", "merkle", "opentelemetry", "otel", "tracing", "observability"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
