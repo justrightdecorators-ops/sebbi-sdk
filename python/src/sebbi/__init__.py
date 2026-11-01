@@ -40,7 +40,7 @@ import urllib.request
 import uuid
 from typing import Any, Callable, Dict, List, Optional
 
-__version__ = "1.2.0"
+__version__ = "1.2.1"
 __all__ = ["receipt", "seal", "reverse", "last", "flush", "configure", "stats", "fingerprint", "Receipt"]
 
 SITE = "https://sebbi.pro"

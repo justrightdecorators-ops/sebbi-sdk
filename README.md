@@ -22,7 +22,7 @@ Neither client has any runtime dependencies. The OpenTelemetry integration needs
 
 ## Releases
 
-Python releases are built and published to PyPI by GitHub Actions with Trusted Publishing, and each file carries a PyPI publish attestation. Every release is tested first, including the cross-language fingerprint test that keeps the two clients identical. Pin the exact version you reviewed, and for the strictest installs pin the file's sha256 from pypi.org with `pip install --require-hashes`.
+Python releases are published to PyPI from this public repository by [`.github/workflows/release.yml`](.github/workflows/release.yml), using Trusted Publishing. Every file carries a PyPI publish attestation naming this repository, that workflow and the exact commit it was built from, and nothing is uploaded unless the full test suite passes. Pin the version you reviewed, and for the strictest installs pin the file's sha256 with `pip install --require-hashes`.
 
 ## Docs
 

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sebbi"
-version = "1.2.0"
+version = "1.2.1"
 description = "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt."
 readme = "README.md"
 license = "MIT"
