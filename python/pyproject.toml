@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sebbi"
+version = "1.1.1"
+description = "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.8"
+authors = [{ name = "Monop Content", email = "justrightdecorators@gmail.com" }]
+keywords = ["ai", "agents", "audit", "receipts", "langchain", "crewai", "mcp", "openai-agents", "governance", "eu-ai-act", "compliance", "provenance", "merkle"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security :: Cryptography",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://sebbi.pro/receipts"
+Documentation = "https://sebbi.pro/receipts"
+"Check a receipt" = "https://sebbi.pro/receipts"
+"MCP server" = "https://sebbi.pro/mcp"
+Repository = "https://github.com/justrightdecorators-ops/sebbi-sdk"
+Source = "https://github.com/justrightdecorators-ops/sebbi-sdk/tree/main/python"
+Issues = "https://github.com/justrightdecorators-ops/sebbi-sdk/issues"
+
+[project.scripts]
+sebbi = "sebbi:_cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sebbi"]

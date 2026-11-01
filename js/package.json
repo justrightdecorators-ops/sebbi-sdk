@@ -1,0 +1,67 @@
+{
+  "name": "sebbi",
+  "version": "1.2.1",
+  "description": "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt. Vercel AI SDK, LangChain.js, Mastra, MCP.",
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    },
+    "./ai-sdk": {
+      "types": "./ai-sdk.d.ts",
+      "import": "./ai-sdk.mjs"
+    }
+  },
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts",
+    "ai-sdk.mjs",
+    "ai-sdk.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "audit",
+    "receipts",
+    "ai-sdk",
+    "vercel-ai",
+    "langchain",
+    "mastra",
+    "mcp",
+    "governance",
+    "eu-ai-act",
+    "compliance",
+    "provenance",
+    "merkle"
+  ],
+  "homepage": "https://sebbi.pro/receipts",
+  "author": "Monop Content <justrightdecorators@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "ai": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "ai": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justrightdecorators-ops/sebbi-sdk.git",
+    "directory": "js"
+  },
+  "bugs": {
+    "url": "https://github.com/justrightdecorators-ops/sebbi-sdk/issues"
+  }
+}
