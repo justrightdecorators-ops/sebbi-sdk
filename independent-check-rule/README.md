@@ -27,6 +27,9 @@ Every letter is published here in full, exactly as sent. Each file's SHA-256 fin
 | [16-south-africa-law-reform-commission.txt](16-south-africa-law-reform-commission.txt) | South Africa | South African Law Reform Commission | `81b3aa20555b8fce6f0397376638ebc0bc23b15a0daa09af5e6d717cd2584eeb` | [NT-S75Q-9FSB](https://sebbi.pro/n/NT-S75Q-9FSB) |
 | [17-canada-law-commission.txt](17-canada-law-commission.txt) | Canada | Law Commission of Canada | `fb0b11717ca87aa997084f4e0d0fcb16ca82ff64ed58e5607a54d75f22d1f71f` | [NT-WKTD-W5VZ](https://sebbi.pro/n/NT-WKTD-W5VZ) |
 | [18-ontario-law-commission.txt](18-ontario-law-commission.txt) | Ontario, Canada | Law Commission of Ontario | `bc72a4805fe04aa5d0e1d1e4d3252fd3b526d97ef3dcff43ff392060962aecb8` | [NT-25RM-NJ58](https://sebbi.pro/n/NT-25RM-NJ58) |
+| [19-uk-civil-procedure-rule-committee.txt](19-uk-civil-procedure-rule-committee.txt) | England and Wales | Civil Procedure Rule Committee, Secretariat | `4ec03d9d40109535e9000f0fee9400cc91435350910c0cff69794bb54db2f339` | [NT-WSHA-AG4D](https://sebbi.pro/n/NT-WSHA-AG4D) |
+| [20-uk-criminal-procedure-rule-committee.txt](20-uk-criminal-procedure-rule-committee.txt) | England and Wales | Criminal Procedure Rule Committee, Secretariat | `e2c7c0809918777c43ef580857621741ccf81e6148879dd894bdfbbd01cc3e9b` | [NT-MEAR-35JU](https://sebbi.pro/n/NT-MEAR-35JU) |
+| [21-oecd-ai.txt](21-oecd-ai.txt) | International | OECD AI Policy Observatory (OECD.AI) | `176d99849b5684cfded115fbf08ae831d948853928a5bdf42bbefb90511e282f` | [NT-3NRR-D68Z](https://sebbi.pro/n/NT-3NRR-D68Z) |
 
 ## Check it yourself
 
