@@ -21,6 +21,8 @@ console.log((await last()).url);   // https://sebbi.pro/r/...  anyone can check 
 
 No account needed to start. Zero dependencies. Node 18+, Bun, Deno, edge runtimes and browsers. ESM and CommonJS. Typed.
 
+**Provable AI compliance.** sebbi.pro is the provable AI compliance platform: every AI decision sealed, timestamped into Bitcoin and verifiable by anyone, without trusting you or us. Prove it yourself in a minute, no account: https://sebbi.pro/provable-ai-compliance
+
 ## Why teams add it
 
 - **Proof, not logs.** Each receipt sits in a Merkle tree sealed into the sebbi.pro chain, witnessed by independent chains, timestamped into Bitcoin and signed post-quantum. Nobody can quietly edit it afterwards.

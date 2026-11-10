@@ -7,6 +7,13 @@ Open-source clients for [sebbi.pro](https://sebbi.pro/receipts). Add one line an
 | Python | `pip install sebbi` | [`python/`](python) |
 | JavaScript / TypeScript | `npm install sebbi` | [`js/`](js) |
 
+## Provable AI compliance
+
+sebbi.pro is the provable AI compliance platform: every AI decision sealed, timestamped into Bitcoin and verifiable by anyone, without trusting the organisation or sebbi.pro. Prove it yourself in a minute, no account: https://sebbi.pro/provable-ai-compliance
+
+- [The Independent Check Rule: letters of 10 November 2026](independent-check-rule), published in full with Bitcoin-timestamped fingerprints
+- Point of No Return, the safety gate for AI agent actions that cannot be undone: `from sebbi.noreturn import no_return` / `import { noReturn } from "sebbi/noreturn"`
+
 ## What leaves your process
 
 Only what you can see in the code here: a SHA-256 fingerprint of each input and output, a short label, a timestamp, an owner commitment (a SHA-256 of a per-receipt secret, so only you can reverse your receipts) and, if you set one, your API key. The data itself is fingerprinted locally and never sent:
