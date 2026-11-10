@@ -21,6 +21,12 @@ Every letter is published here in full, exactly as sent. Each file's SHA-256 fin
 | [10-australia-alrc.txt](10-australia-alrc.txt) | Australia | Australian Law Reform Commission | `4915e2bf954663ac9ef5fd46de435c87ba67d62c59a98fa8c521a5e9ac3e3d50` | [NT-UWS2-T722](https://sebbi.pro/n/NT-UWS2-T722) |
 | [11-new-zealand-law-commission.txt](11-new-zealand-law-commission.txt) | New Zealand | Te Aka Matua o te Ture | Law Commission | `56b5ffc864bc9ee65a2a299987d56852abe0298dc202ae30668db2320efe6b43` | [NT-9JD9-JSVZ](https://sebbi.pro/n/NT-9JD9-JSVZ) |
 | [12-hong-kong-law-reform-commission.txt](12-hong-kong-law-reform-commission.txt) | Hong Kong SAR, China | Law Reform Commission of Hong Kong | `05a4284eb4c761f0ae131a474ed05049f5139281ac4e46c638689ee970d461e7` | [NT-E2UP-7DNX](https://sebbi.pro/n/NT-E2UP-7DNX) |
+| [13-ireland-law-reform-commission.txt](13-ireland-law-reform-commission.txt) | Ireland | Law Reform Commission of Ireland | `84ec7ffed1298518162ce75223ec43604815222a424490f882c8c7698343a6e9` | [NT-HVWY-9LNN](https://sebbi.pro/n/NT-HVWY-9LNN) |
+| [14-eu-edpb.txt](14-eu-edpb.txt) | European Union | European Data Protection Board | `343a007d0e76c0fcd5f4b3bd3fbf4d8a19d4c212ba9f0dab32d214e3f9a63342` | [NT-TQRS-4Q72](https://sebbi.pro/n/NT-TQRS-4Q72) |
+| [15-eu-edps.txt](15-eu-edps.txt) | European Union | European Data Protection Supervisor | `de46a720e4ffc8134b2a5e4ee68c43398725d9e8ecde3fc898a8f046e0f227ef` | [NT-W54Q-CPKP](https://sebbi.pro/n/NT-W54Q-CPKP) |
+| [16-south-africa-law-reform-commission.txt](16-south-africa-law-reform-commission.txt) | South Africa | South African Law Reform Commission | `81b3aa20555b8fce6f0397376638ebc0bc23b15a0daa09af5e6d717cd2584eeb` | [NT-S75Q-9FSB](https://sebbi.pro/n/NT-S75Q-9FSB) |
+| [17-canada-law-commission.txt](17-canada-law-commission.txt) | Canada | Law Commission of Canada | `fb0b11717ca87aa997084f4e0d0fcb16ca82ff64ed58e5607a54d75f22d1f71f` | [NT-WKTD-W5VZ](https://sebbi.pro/n/NT-WKTD-W5VZ) |
+| [18-ontario-law-commission.txt](18-ontario-law-commission.txt) | Ontario, Canada | Law Commission of Ontario | `bc72a4805fe04aa5d0e1d1e4d3252fd3b526d97ef3dcff43ff392060962aecb8` | [NT-25RM-NJ58](https://sebbi.pro/n/NT-25RM-NJ58) |
 
 ## Check it yourself
 

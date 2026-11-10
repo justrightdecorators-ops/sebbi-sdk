@@ -1,0 +1,33 @@
+To the Law Commission of Ontario
+
+I am writing on behalf of sebbi.pro (Monop Content), based in the United Kingdom. Section 34.1 of the Ontario Evidence Act rests the admissibility of an electronic record on the integrity of the electronic records system, and the Commission has examined the use of AI and automated decision-making in the justice system. The United Kingdom is reconsidering its own presumption about computer evidence after the Post Office Horizon cases, and we have made the proposal below to the Ministry of Justice there. We send it to the Commission as an idea for its work on AI: it gives the integrity question a quick, method-neutral test that does not depend on the word of the party relying on the record.
+
+THE INDEPENDENT CHECK RULE (ICR-1)
+
+1. A self-attested record is a record whose integrity can be shown only by the person relying on it, or by someone acting for them.
+2. An independently checkable record is a record for which a person with no access to the holder's systems, and no need to trust the holder, can detect any later alteration, deletion or back-dating, using a published method.
+3. No presumption of integrity applies to a self-attested record. The person relying on it must show that it has not been altered since it was made.
+4. An independently checkable record that passes its check is presumed unaltered since the time of its independent timestamp, unless the contrary is shown.
+5. The rule is neutral as to method. Any published method that meets the second clause qualifies.
+
+The rule is about whether a record was changed after it was made. Whether the system that made the record was working correctly is a separate question.
+
+WHY NOW
+Logs and records produced by software, and increasingly by AI systems acting on their own, are relied on as evidence of what happened. Most can be altered, deleted or back-dated by the organisation that holds them, with nothing outside that organisation recording the change. For thirty years there was no practical alternative. There is now: methods that let an outsider detect any change have been published since 1991, are in production use, and cost nothing to check. Only a fingerprint leaves the organisation, never the record.
+
+THE EVIDENCE
+State of the Art Notice (the methods, 1991 to today, itself timestamped): https://sebbi.pro/.well-known/state-of-the-art-logging.json
+Editable Log Test (change one line of a log on your own phone and see who could tell): https://sebbi.pro/log-test
+The rule, six questions for any party relying on a log, and a model contract clause: https://sebbi.pro/independent-check-rule
+
+The rule names no product and we ask for none to be named. We would be glad to give evidence in writing or in person and to demonstrate the test. An acknowledgement of receipt, or a pointer to the right team, would be appreciated.
+
+This letter is one of a series sent on 10 November 2026 to bodies responsible for evidence law and AI standards in several jurisdictions. Each letter is published in full, with its SHA-256 fingerprint timestamped into Bitcoin, at:
+https://github.com/justrightdecorators-ops/sebbi-sdk/tree/main/independent-check-rule
+
+Yours faithfully
+
+Justin Dobson
+Founder and Lead Systems Architect
+sebbi.pro (Monop Content)
+https://sebbi.pro
