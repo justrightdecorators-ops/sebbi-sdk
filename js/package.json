@@ -1,6 +1,6 @@
 {
   "name": "sebbi",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt. Vercel AI SDK, OpenTelemetry, LangChain.js, Mastra, MCP.",
   "main": "./index.cjs",
   "module": "./index.mjs",
@@ -19,6 +19,11 @@
       "types": "./otel.d.ts",
       "import": "./otel.mjs",
       "require": "./otel.cjs"
+    },
+    "./noreturn": {
+      "types": "./noreturn.d.ts",
+      "import": "./noreturn.mjs",
+      "require": "./noreturn.cjs"
     }
   },
   "files": [
@@ -30,6 +35,9 @@
     "otel.cjs",
     "otel.mjs",
     "otel.d.ts",
+    "noreturn.cjs",
+    "noreturn.mjs",
+    "noreturn.d.ts",
     "README.md",
     "LICENSE"
   ],
@@ -48,6 +56,8 @@
     "mastra",
     "mcp",
     "governance",
+    "ai-safety",
+    "human-oversight",
     "eu-ai-act",
     "compliance",
     "provenance",

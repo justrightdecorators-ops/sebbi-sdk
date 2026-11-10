@@ -92,6 +92,21 @@ await reverse(r, "Customer cancelled; refund issued");
 
 The original receipt stays sealed and valid, and its page shows **Reversed**, the reason and a link to the reversal receipt. Only whoever sealed the original (this installation, or the same account key) can reverse it, and a reversal cannot itself be reversed.
 
+## Point of No Return: the safety gate
+
+Some agent actions never come back: delete, pay, send, publish, sign. Put the gate in front of them.
+
+```js
+import { noReturn } from "sebbi/noreturn";
+
+const refund = noReturn(
+  { agent: "billing-agent", action: "refund payment",
+    wayBack: { type: "hold", seconds: 900 }, amount: (order, amount) => amount },
+  async (order, amount) => { /* runs only when the gate says GO */ });
+```
+
+An irreversible action goes ahead with a way back (a fresh backup fingerprint, an exact undo, or a waiting window anyone responsible can cancel) or with a named person's approval on their phone. No answer means no, and if the gate cannot be reached the action does not happen. Every answer is sealed and timestamped into Bitcoin, with a public record page per action. Needs `SEBBI_API_KEY`. Rules, limits and the per-agent safety report: https://sebbi.pro/point-of-no-return
+
 ## Settings
 
 | Environment | Meaning |
