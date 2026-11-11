@@ -94,6 +94,21 @@ await reverse(r, "Customer cancelled; refund issued");
 
 The original receipt stays sealed and valid, and its page shows **Reversed**, the reason and a link to the reversal receipt. Only whoever sealed the original (this installation, or the same account key) can reverse it, and a reversal cannot itself be reversed.
 
+## Input Gate: garbage in, caught at the door
+
+A sealed record proves nothing was changed afterwards. The Input Gate proves what went in was genuine to begin with. Each input is checked against the file its source hosts on its own domain, before your AI uses it.
+
+```js
+import { admit } from "sebbi/source";
+
+const code = await admit("pricing-agent", [
+  { domain: "your-supplier.com", data: priceList, label: "Q4 price list" },
+], { ref: "quote-10482" });
+// reaches here only when every input is vouched for by its source
+```
+
+The data is fingerprinted on your machine and only the fingerprint is sent. `ADMIT` resolves with a `GI-` code to keep with the decision; `HOLD`, `REFUSE` or no connection throw `GarbageIn`. https://sebbi.pro/garbage-in
+
 ## Point of No Return: the safety gate
 
 Some agent actions never come back: delete, pay, send, publish, sign. Put the gate in front of them.

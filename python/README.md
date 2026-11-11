@@ -106,6 +106,21 @@ sebbi.reverse(r, "Customer cancelled; refund issued")
 
 Refunds, cancellations and withdrawn decisions happen. A reversal never deletes anything: the original receipt stays sealed and valid, and its page shows **Reversed**, the reason and a link to the sealed reversal receipt. Only whoever sealed the original (this installation, or the same account key) can reverse it, and a reversal cannot itself be reversed.
 
+## Input Gate: garbage in, caught at the door
+
+A sealed record proves nothing was changed afterwards. The Input Gate proves what went in was genuine to begin with. Each input is checked against the file its source hosts on its own domain, before your AI uses it.
+
+```python
+from sebbi.source import admit, GarbageIn
+
+code = admit("pricing-agent", [
+    {"domain": "your-supplier.com", "data": price_list, "label": "Q4 price list"},
+], ref="quote-10482")
+# reaches here only when every input is vouched for by its source
+```
+
+The data is fingerprinted on your machine and only the fingerprint is sent. `ADMIT` returns a `GI-` code to keep with the decision; `HOLD`, `REFUSE` or no connection raise `GarbageIn`. https://sebbi.pro/garbage-in
+
 ## Point of No Return: the safety gate
 
 Some agent actions never come back: delete, pay, send, publish, sign. Put the gate in front of them.

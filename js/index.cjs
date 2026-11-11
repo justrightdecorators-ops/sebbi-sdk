@@ -15,7 +15,7 @@
  * Zero dependencies. Node 18+, Deno, Bun, edge runtimes and browsers.
  */
 
-const VERSION = "1.4.1";
+const VERSION = "1.5.0";
 const SITE = "https://sebbi.pro";
 const env = (k) => (typeof process !== "undefined" && process.env ? process.env[k] || "" : "");
 

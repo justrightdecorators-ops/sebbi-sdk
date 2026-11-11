@@ -14,6 +14,26 @@ sebbi.pro is the provable AI compliance platform: every AI decision sealed, time
 - [The Independent Check Rule: letters of 10 November 2026](independent-check-rule), published in full with Bitcoin-timestamped fingerprints
 - Point of No Return, the safety gate for AI agent actions that cannot be undone: `from sebbi.noreturn import no_return` / `import { noReturn } from "sebbi/noreturn"`
 
+## Garbage in, caught at the door
+
+A sealed record proves nothing was changed afterwards. The Input Gate proves what went in was genuine to begin with. Before your AI uses third-party data, each input is checked against the file its source hosts on its own domain (`/.well-known/sebbi-source.json`), and the answer is sealed with the decision.
+
+```python
+from sebbi.source import admit            # pip install sebbi
+
+code = admit("pricing-agent", [
+    {"domain": "your-supplier.com", "data": price_list, "label": "Q4 price list"},
+], ref="quote-10482")
+```
+
+```js
+import { admit } from "sebbi/source";     // npm install sebbi
+```
+
+Each input comes back GENUINE, TAMPERED, UNVERIFIED or UNKNOWN; the gate answers ADMIT, HOLD or REFUSE and returns a `GI-` code to keep with the decision. The data is fingerprinted on your machine: only the fingerprint is sent. Try it without an account: https://sebbi.pro/garbage-in
+
+sebbi.pro vouches for its own published texts the same way. Check the Independent Check Rule against https://sebbi.pro/.well-known/sebbi-source.json, change one word, and check again.
+
 ## What leaves your process
 
 Only what you can see in the code here: a SHA-256 fingerprint of each input and output, a short label, a timestamp, an owner commitment (a SHA-256 of a per-receipt secret, so only you can reverse your receipts) and, if you set one, your API key. The data itself is fingerprinted locally and never sent:
