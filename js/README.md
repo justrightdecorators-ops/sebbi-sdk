@@ -94,6 +94,14 @@ await reverse(r, "Customer cancelled; refund issued");
 
 The original receipt stays sealed and valid, and its page shows **Reversed**, the reason and a link to the reversal receipt. Only whoever sealed the original (this installation, or the same account key) can reverse it, and a reversal cannot itself be reversed.
 
+## Run the MCP connector as a local command
+
+```
+npx -y sebbi mcp
+```
+
+For AI clients and MCP marketplaces that start servers as a local command (stdio). A thin bridge to `https://sebbi.pro/mcp`; nothing is stored locally. 中文说明: https://github.com/justrightdecorators-ops/sebbi-sdk/blob/main/README.zh-CN.md
+
 ## Input Gate: garbage in, caught at the door
 
 A sealed record proves nothing was changed afterwards. The Input Gate proves what went in was genuine to begin with. Each input is checked against the file its source hosts on its own domain, before your AI uses it.

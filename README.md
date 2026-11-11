@@ -1,5 +1,7 @@
 # sebbi SDK — a receipt for every AI agent action
 
+[中文说明](README.zh-CN.md) · Run the MCP connector locally: `npx -y sebbi mcp` or `uvx sebbi mcp`
+
 Open-source clients for [sebbi.pro](https://sebbi.pro/receipts). Add one line and every action your AI agent takes gets a sealed, publicly checkable receipt.
 
 | Language | Install | Source |

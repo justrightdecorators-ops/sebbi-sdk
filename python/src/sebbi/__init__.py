@@ -40,7 +40,7 @@ import urllib.request
 import uuid
 from typing import Any, Callable, Dict, List, Optional
 
-__version__ = "1.4.0"
+__version__ = "1.4.1"
 __all__ = ["receipt", "seal", "reverse", "last", "flush", "configure", "stats", "fingerprint", "Receipt"]
 
 SITE = "https://sebbi.pro"
@@ -436,8 +436,12 @@ def _cli() -> int:
     if not a or a[0] in ("-h", "--help"):
         print("sebbi %s - a receipt for every AI agent action\n\n  sebbi seal <text> [label]   seal a fingerprint of <text>, print the receipt link\n"
               "  sebbi check <id>            check a receipt\n"
+              "  sebbi mcp                   run the sebbi.pro MCP connector as a local command (stdio)\n"
               "  sebbi verify-otlp <file>    check every span in an OTLP/JSON trace export against its receipt\n\nDocs: %s/receipts" % (__version__, SITE))
         return 0
+    if a[0] == "mcp":
+        from sebbi.mcp_bridge import main as _mcp
+        return _mcp()
     if a[0] == "seal" and len(a) > 1:
         r = seal(a[1], None, a[2] if len(a) > 2 else "cli").wait()
         print(r.url if r.sealed else "not sealed: %s %s" % (r.error, _sender.notice or ""))
