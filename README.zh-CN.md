@@ -49,7 +49,7 @@
 
 ## 价格
 
-免费试用 7 天，之后每台设备每月 50 便士（约 ¥4.6）。核验任何证据永久免费。
+免费试用 7 天，之后每台设备每月 50 便士（0.50 英镑）。核验任何证据永久免费。
 
 ## 链接
 
@@ -58,6 +58,6 @@
 - 连接说明：https://sebbi.pro/connect
 - 官方 MCP Registry 命名空间：`pro.sebbi`
 - PyPI：https://pypi.org/project/sebbi/ · npm：https://www.npmjs.com/package/sebbi
-- 许可证：Apache-2.0
+- 许可证：MIT
 
 创始人兼首席系统架构师：Justin Dobson（sebbi.pro / Monop Content，英国）
