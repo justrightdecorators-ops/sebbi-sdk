@@ -32,6 +32,8 @@ import { admit } from "sebbi/source";     // npm install sebbi
 
 Each input comes back GENUINE, TAMPERED, UNVERIFIED or UNKNOWN; the gate answers ADMIT, HOLD or REFUSE and returns a `GI-` code to keep with the decision. The data is fingerprinted on your machine: only the fingerprint is sent. Try it without an account: https://sebbi.pro/garbage-in
 
+**Input Provenance Notice.** Since 9 November 2026 a published, open and free method has existed for checking, at the moment of use, that data given to an AI system is the data its source stands behind. The rules that turn on the origin, accuracy or provenance of data (EU AI Act Article 10(2)(b) and 26(4), GDPR Articles 5, 25 and 32, ISO/IEC 42001 control A.7.5) measure conduct against what can reasonably be done, and what can reasonably be done has changed. Sealed and dated: https://sebbi.pro/.well-known/input-provenance-notice.json
+
 sebbi.pro vouches for its own published texts the same way. Check the Independent Check Rule against https://sebbi.pro/.well-known/sebbi-source.json, change one word, and check again.
 
 ## What leaves your process
