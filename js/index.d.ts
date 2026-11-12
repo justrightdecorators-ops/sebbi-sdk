@@ -17,7 +17,7 @@ export declare function flush(ms?: number): Promise<boolean>;
 export declare function configure(o: { apiKey?: string; endpoint?: string; enabled?: boolean; client?: string }): void;
 export declare function stats(): { queued: number; sealed: number; failed: number; pending: number; endpoint: string; keyed: boolean; notice: string | null };
 export declare function fingerprint(value: unknown): Promise<string>;
-export declare function check(id: string): Promise<Record<string, any>>;
+export declare function check(id: string | { id: string }): Promise<Record<string, any>>;
 declare const _default: {
   receipt: typeof receipt; seal: typeof seal; reverse: typeof reverse; wrapTools: typeof wrapTools; last: typeof last;
   flush: typeof flush; configure: typeof configure; stats: typeof stats; fingerprint: typeof fingerprint; check: typeof check;

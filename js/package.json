@@ -1,6 +1,6 @@
 {
   "name": "sebbi",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A receipt for every AI agent action. One line: every tool call gets a sealed, publicly checkable receipt. Vercel AI SDK, OpenTelemetry, LangChain.js, Mastra, MCP.",
   "main": "./index.cjs",
   "module": "./index.mjs",

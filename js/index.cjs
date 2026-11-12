@@ -15,7 +15,7 @@
  * Zero dependencies. Node 18+, Deno, Bun, edge runtimes and browsers.
  */
 
-const VERSION = "1.5.1";
+const VERSION = "1.5.2";
 const SITE = "https://sebbi.pro";
 const env = (k) => (typeof process !== "undefined" && process.env ? process.env[k] || "" : "");
 
@@ -288,9 +288,13 @@ async function flush(ms = 5000) {
 
 const stats = () => Object.assign({}, counts, { pending: queue.length, endpoint: cfg.endpoint, keyed: !!cfg.apiKey, notice });
 
-/** Check a receipt by id. Anyone can, no key. */
+/** Check a receipt by id, or pass the receipt itself. Anyone can, no key. */
 async function check(id) {
-  const res = await fetch(SITE + "/v1/receipts/" + encodeURIComponent(id));
+  const rid = typeof id === "string" ? id : id && (id.id || id.receipt_id || id.local_id);
+  if (!rid || typeof rid !== "string") {
+    throw new TypeError("sebbi.check() needs a receipt id string or a receipt object with an id");
+  }
+  const res = await fetch(SITE + "/v1/receipts/" + encodeURIComponent(rid));
   return res.json();
 }
 
